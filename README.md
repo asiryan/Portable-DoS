@@ -1,4 +1,7 @@
-# Portable DoS
+<p align="center"><img width="25%" src="sources/icon.ico" /></p>
+
+**Portable-DoS**  
+
 **Portable DoS** is highly-optimized application written on C# (.NET Core) that uses parallel options to implement DoS and DDoS attacks. This is **NOT a hacking tool**, but an application for load testing of sites. That is because it is released under the [GNU GPL v3 license](LICENSE).
 
 ## Introduction
