@@ -18,11 +18,11 @@ namespace PDoS
         /// <summary>
         /// Attack config file.
         /// </summary>
-        const string attack = "Attack.json";
+        const string _attack = "Attack.json";
         /// <summary>
         /// API uri.
         /// </summary>
-        const string api = "https://api.myip.com/";
+        const string _api = "https://api.myip.com/";
         /// <summary>
         /// Timeout.
         /// </summary>
@@ -64,7 +64,7 @@ namespace PDoS
             Console.ForegroundColor = ConsoleColor.White;
 
             // Json
-            var json = JObject.Parse(File.ReadAllText(attack));
+            var json = JObject.Parse(File.ReadAllText(_attack));
             var config = (bool)json["config"];
             string uri;
             uint requests;
@@ -73,7 +73,7 @@ namespace PDoS
             // Parse data
             if (config)
             {
-                Console.WriteLine($"Configuration file: {attack.ToLower()}");
+                Console.WriteLine($"Configuration file: {_attack.ToLower()}");
                 uri = (string)json["target"];
                 Console.WriteLine($"Target url: {uri}");
                 requests = uint.Parse((string)json["requests"]);
@@ -128,7 +128,7 @@ namespace PDoS
 
             try
             {
-                var ipdata = client.GetStringAsync(api).GetAwaiter().GetResult();
+                var ipdata = client.GetStringAsync(_api).GetAwaiter().GetResult();
                 var ipjson = JObject.Parse(ipdata);
                 Console.WriteLine($"User: {Environment.MachineName}");
                 Console.WriteLine($"IPv4: {ipjson["ip"]}");
