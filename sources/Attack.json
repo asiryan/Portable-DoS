@@ -1,0 +1,7 @@
+// Portable DoS attack settings
+{
+  "config": true,
+  "target": "http://192.168.1.66:80/",
+  "requests": 100,
+  "threads": 100
+}
