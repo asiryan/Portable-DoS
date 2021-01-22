@@ -1,6 +1,5 @@
-<p align="center"><img width="25%" src="sources/icon.ico" /></p>
-
-**Portable-DoS**  
+<p align="center"><img width="15%" src="sources/icon.ico" /></p>
+<p align="center"><b> Portable-DoS </b></p>  
 
 **Portable DoS** is highly-optimized application written on C# (.NET Core) that uses parallel options to implement DoS and DDoS attacks. This is **NOT a hacking tool**, but an application for load testing of sites. That is because it is released under the [GNU GPL v3 license](LICENSE).
 
@@ -18,6 +17,7 @@ Define target website for testing and number of requests and threads in [Attack.
 ```json
 // Portable DoS attack settings
 {
+  "config": true,
   "target": "https://target-adress.com/",
   "requests": 100,
   "threads": 1000
@@ -25,10 +25,7 @@ Define target website for testing and number of requests and threads in [Attack.
 ```
 Start DoS attack testing using *Portable-DoS.exe*
 ```
-Starting DoS attack for https://target-adress.com/
 [ Serial requests: 100 ][ Parallel threads: 1000 ]
-To stop DoS attack press Ctrl + C
-
 [ Attack: 17% ][ Target:  503 (Service Temporarily Unavailable). ] 
 ```
 
