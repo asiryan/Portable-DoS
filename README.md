@@ -22,7 +22,7 @@ Define target website for testing and number of requests and threads in [Attack.
   "threads": 1000
 }
 ```
-Start DoS attack testing using *Portable-DoS.exe*
+Start DoS attack testing.
 ```
 Configuration file: attack.json
 Target url: https://target-adress.com/
