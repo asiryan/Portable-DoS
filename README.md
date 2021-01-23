@@ -11,7 +11,7 @@ In a **DDoS (distributed denial-of-service) attack**, the incoming traffic flood
 
 ## How to Use
 Download and build **Portable-DoS** from [sources](sources).  
-Define target website for testing and number of requests and threads in [Attack.json](sources/Attack.json).  
+Define target website for testing and number of requests and threads in [Attack.json](sources/Attack.json)  
 
 ```json
 // Portable DoS attack settings
@@ -22,7 +22,7 @@ Define target website for testing and number of requests and threads in [Attack.
   "threads": 1000
 }
 ```
-Start DoS attack testing.
+Start DoS attack testing  
 ```
 Configuration file: attack.json
 Target url: https://target-adress.com/
@@ -51,7 +51,7 @@ Headers:
   Expires: Sat, 18 Jan 2021 23:59:00 GMT
 }
 ```
-The application shows the current attack status and target status.
+The application shows the current attack status and target status  
 ```
 [ Serial requests: 100 ][ Parallel threads: 1000 ]
 [ Attack: 17% ][ Target:  503 (Service Temporarily Unavailable). ] 
