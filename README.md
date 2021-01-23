@@ -27,7 +27,7 @@ Start DoS attack testing using *Portable-DoS.exe*.
 [ Serial requests: 100 ][ Parallel threads: 1000 ]
 [ Attack: 17% ][ Target:  503 (Service Temporarily Unavailable). ] 
 ```
-In this case target website respones 503 error which means that the server cannot handle the request, because it is overloaded or down for maintenance. But generally, this is a temporary state.  
+In this case target website responds **503 Service Temporarily Unavailable** which means that the server cannot handle the request, because it is overloaded or down for maintenance. But generally, this is a temporary state.  
 All list of HTTP status codes is available on [wiki](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).  
 
 ## License
