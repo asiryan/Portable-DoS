@@ -1,6 +1,7 @@
 <p align="center"><img width="20%" src="sources/icon.ico" /></p>
 
-**Portable DoS** is highly-optimized application written on C# (.NET Core) that uses parallel options to implement DoS and DDoS attacks. This is **NOT a hacking tool**, but an application for load testing of sites. That is because it is released under the [GNU GPL v3 license](LICENSE).
+**Portable DoS** is highly-optimized application written on C# (.NET Core) that uses parallel options to implement DoS and DDoS attacks. This is **NOT a hacking tool**, but an application for load testing of sites. That is because it is released under the [GNU GPL v3 license](LICENSE).  
+**Portable-DoS** uses [HTTP flood](https://en.wikipedia.org/wiki/HTTP_Flood) to attack a server. Application sends big number of small HTTP packets, but such that the server responds with a packet that is hundreds of times larger in size. Even if the server's channel is ten times wider than the attacker's channel, there is still a great chance to saturate the victim's bandwidth.  
 
 ## Introduction
 ### DoS attack
@@ -22,11 +23,13 @@ Define target website for testing and number of requests and threads in [Attack.
   "threads": 1000
 }
 ```
-Start DoS attack testing using *Portable-DoS.exe*
+Start DoS attack testing using *Portable-DoS.exe*.
 ```
 [ Serial requests: 100 ][ Parallel threads: 1000 ]
 [ Attack: 17% ][ Target:  503 (Service Temporarily Unavailable). ] 
 ```
+In this case target website respones 503 error which means that the server cannot handle the request, because it is overloaded or down for maintenance. But generally, this is a temporary state.  
+All list of HTTP status codes is available on [wiki](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).  
 
 ## License
 GNU GPL v3
