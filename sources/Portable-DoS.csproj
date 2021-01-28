@@ -4,6 +4,9 @@
     <OutputType>Exe</OutputType>
     <TargetFramework>netcoreapp3.1</TargetFramework>
     <ApplicationIcon>icon.ico</ApplicationIcon>
+    <Version>1.0.0.1</Version>
+    <Description>Portable DoS is highly-optimized application written on C# (.NET Core) that uses parallel options to implement DoS and DDoS attacks.</Description>
+    <PackageProjectUrl>https://github.com/asiryan/Portable-DoS</PackageProjectUrl>
   </PropertyGroup>
 
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
