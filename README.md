@@ -17,6 +17,7 @@ Define target website for testing and number of requests and threads in [Attack.
 // Portable DoS attack settings
 {
   "config": true,
+  "agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)",
   "target": "https://target-adress.com/",
   "requests": 100,
   "threads": 1000
@@ -25,6 +26,7 @@ Define target website for testing and number of requests and threads in [Attack.
 Start DoS attack testing  
 ```
 Configuration file: attack.json
+User agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)
 Target url: https://target-adress.com/
 Serial requests: 100
 Parallel threads: 1000
