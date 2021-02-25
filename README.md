@@ -18,7 +18,7 @@ Define target website for testing and number of requests and threads in [Attack.
 {
   "config": true,
   "agent": "Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)",
-  "target": "https://target-adress.com/",
+  "target": "https://target-address.com/",
   "requests": 100,
   "threads": 1000
 }
@@ -27,7 +27,7 @@ Start DoS attack testing
 ```
 Configuration file: attack.json
 User agent: Mozilla/4.0 (compatible; MSIE 6.0; Windows NT 5.2; .NET CLR 1.0.3705;)
-Target url: https://target-adress.com/
+Target url: https://target-address.com/
 Serial requests: 100
 Parallel threads: 1000
 
@@ -35,7 +35,7 @@ User: DESKTOP-AZF7BU9
 IPv4: 148.77.34.195
 Country: United States of America
 
-Checking target https://target-adress.com/...
+Checking target https://target-address.com/...
 StatusCode: 200, ReasonPhrase: 'OK', Version: 1.1, Content: System.Net.Http.HttpConnectionResponseContent, 
 Headers:
 {
