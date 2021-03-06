@@ -62,7 +62,7 @@ In this case target website responds **503 Service Temporarily Unavailable** whi
 All list of HTTP status codes is available on [wiki](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).  
 
 ## 403 (Forbidden)
-If you receive a 403 error response 
+If you receive a **403 (Forbidden)** error response 
 ```
 Target: Response status code does not indicate success: 403 (Forbidden).
 ```
