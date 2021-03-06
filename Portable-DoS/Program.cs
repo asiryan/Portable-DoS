@@ -48,7 +48,7 @@ namespace PDoS
         static void Main()
         {
             // Start
-            CultureInfo.CurrentCulture = CultureInfo.InvariantCulture;
+            Thread.CurrentThread.CurrentCulture = CultureInfo.InvariantCulture;
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine(Separator);
             Console.WriteLine($"Portable DoS attack application");
