@@ -64,7 +64,7 @@ All list of HTTP status codes is available on [wiki](https://en.wikipedia.org/wi
 ## 403 (Forbidden)
 If you receive a **403 (Forbidden)** error response 
 ```
-Target: Response status code does not indicate success: 403 (Forbidden).
+Target: Response status code does not indicate success: 403 (Forbidden)
 ```
 change the agent value in [Attack.json](Portable-DoS/Attack.json). Agent configurations provided in [User-Agent.ini](Portable-DoS/User-Agent.ini).  
 
