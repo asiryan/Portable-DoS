@@ -66,7 +66,7 @@ If you receive a 403 error response
 ```
 Target: Response status code does not indicate success: 403 (Forbidden).
 ```
-change agent value in [Attack.json](Portable-DoS/Attack.json). Agent configurations provided in [User-Agent.ini](Portable-DoS/User-Agent.ini).  
+change the agent value in [Attack.json](Portable-DoS/Attack.json). Agent configurations provided in [User-Agent.ini](Portable-DoS/User-Agent.ini).  
 
 ## License
 GNU GPL v3
