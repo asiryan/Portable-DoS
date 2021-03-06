@@ -61,7 +61,7 @@ The application shows the current attack status and target status
 In this case target website responds **503 Service Temporarily Unavailable** which means that the server cannot handle the request, because it is overloaded or down for maintenance. But generally, this is a temporary state.  
 All list of HTTP status codes is available on [wiki](https://en.wikipedia.org/wiki/List_of_HTTP_status_codes).  
 
-## 403 (
+## 403 (Forbidden)
 If you get 403 error
 ```
 Target: Response status code does not indicate success: 403 (Forbidden).
