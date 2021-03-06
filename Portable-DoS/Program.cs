@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 namespace PDoS
 {
     /// <summary>
-    /// .NET Core portable DoS attack application.
+    /// .NET Framework portable DoS attack application.
     /// </summary>
     static class Program
     {
