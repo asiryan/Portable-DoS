@@ -1,6 +1,6 @@
 <p align="center"><img width="20%" src="Portable-DoS/icon.ico" /></p>
 
-**Portable DoS** is highly-optimized application written on C# (.NET Framework 4.5) that uses parallel options to implement DoS and DDoS attacks. This is **NOT a hacking tool**, but an application for load testing of sites. That is because it is released under the [GNU GPL v3 license](LICENSE). **Portable-DoS** uses [HTTP flood](https://en.wikipedia.org/wiki/HTTP_Flood) to attack a server. Application sends big number of small HTTP packets, but such that the server responds with a packet that is hundreds of times larger in size. Even if the server's channel is ten times wider than the attacker's channel, there is still a great chance to saturate the victim's bandwidth.  
+**Portable DoS** is highly-optimized application written on C# (.NET Framework 4.5) that uses parallel options to implement DoS and DDoS attacks. This is **NOT a hacking tool**, but an application for load testing of sites. That is because it is released under the [GNU GPL v3 license](LICENSE). **Portable DoS** uses [HTTP flood](https://en.wikipedia.org/wiki/HTTP_Flood) to attack a server. Application sends big number of small HTTP packets, but such that the server responds with a packet that is hundreds of times larger in size. Even if the server's channel is ten times wider than the attacker's channel, there is still a great chance to saturate the victim's bandwidth.  
 
 ## Introduction
 ### DoS attack
